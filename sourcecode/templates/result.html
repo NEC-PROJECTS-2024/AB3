@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Liver Disease Prediction Result</title>
+    <link rel="stylesheet" href="static/style.css">
+    <style>
+        /* static/style.css */
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-image: url('../liver.jpg');
+    justify-content: center;
+    height: 100vh;
+}
+
+.prediction {
+    color: green;
+    font-size: 20px;
+    text-align: center;
+}
+
+.error {
+    color: red;
+    font-size: 20px;
+    text-align: center;
+}
+
+a {
+    margin-top: 20px;
+    text-decoration: none;
+    color: #3498db;
+    font-weight: bold;
+    font-size: 16px;
+    display: inline-block;
+}
+
+a:hover {
+    color: #1f618d;
+}
+
+    </style>
+</head>
+<body>
+    <div>
+        <h2><p style="text-align: center;color:rgb(57, 5, 247)">Result:-</p></h2>
+        {% if prediction ==1%}
+        <p class="prediction">Prediction: {{ prediction }}</p>
+        <h2> Chances of having Liver Disease is more,please consult a Doctor.</h2>
+        <h3>Symptoms</h3>
+        <p>Classic symoptoms of liver disease include:</p>
+        <ul>
+            <li>Nausea</li>
+            <li>Vomiting</li>
+            <li>Right upper quadrant abdominal pain,and</li>
+            <li>Jaundice</li>
+        </ul>
+        <br>
+    </div>
+        <img src="https://static.vecteezy.com/system/resources/previews/000/656/917/original/vector-set-of-doctor-cartoon-characters-medical-staff-team-concept-in-front-of-hospital.jpg" alt="Liver Disease" style="display: block; margin-left: 400px; margin: right px; margin-top: -180px; width: 30%;">
+    <div class="z">
+    {% elif prediction ==0%}
+      <p class="prediction">Prediction: {{ prediction }}</p>
+      <h2 style="text-align: center;">No Worries!!! You don't have Liver Disease, be SAFE.... </h2>
+      <img src="https://heargoodnews.org/wp-content/uploads/2021/01/emoji-marketing.png" alt="Liver Disease" style="display: block; margin-left: auto; margin-right: auto; width: 50%;">
+    {% endif %}
+    </div>
+
+    <a href="/">Go back to the form</a>
+
+    <script src="static/script.js"></script>
+</body>
+</html>
